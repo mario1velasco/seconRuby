@@ -27,6 +27,9 @@ class ArticlesController < ApplicationController
 
   private
   def article_params
+
+    # Tenemos que incluir en la lista blanca nuestros parámetros 
+    # del controlador para evitar la asignación masiva incorrecta.
     params.require(:article).permit(:title, :text)
   end
 end
